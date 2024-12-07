@@ -1,0 +1,973 @@
+,questions,answers,o1
+1,"Find the arithmetic mean of all the three-digit palindromes. (Recall that a palindrome is a number that reads the same forward and backward, such as \(777\) or \(383\).)
+","Recall that the arithmetic mean of all the \(n\)-digit palindromes is just the average of the largest and smallest \(n\)-digit palindromes. In this case, the two palindromes are \(101\) and \(999\). Therefore, the arithmetic mean is:
+
+\[
+\frac{101 + 999}{2} = \boxed{550},
+\]
+
+which is the final answer.",
+2," Find the number of permutations \(x_1, x_2, x_3, x_4, x_5\) of the numbers \(1, 2, 3, 4, 5\) such that the sum of the five products
+
+\[
+x_1 x_2 x_3 + x_2 x_3 x_4 + x_3 x_4 x_5 + x_4 x_5 x_1 + x_5 x_1 x_2
+\]
+
+is divisible by \(3\).","Since \(3\) is one of the numbers, any product containing \(3\) is automatically divisible by \(3\). Without loss of generality, let \(x_3 = 3\). We will multiply by \(5\) afterward since any of \(x_1, x_2, \ldots, x_5\) can be \(3\).
+
+After simplification, we need to count the number of ways that \(x_5 x_1 (x_4 + x_2)\) is divisible by \(3\). Since \(x_5 x_1\) is never divisible by \(3\), we need to ensure that \(x_4 + x_2\) is divisible by \(3\).
+
+The possible pairs \((x_2, x_4)\) such that \(x_4 + x_2 \equiv 0 \pmod{3}\) are:
+
+\[
+(1, 2), (2, 1), (1, 5), (5, 1), (2, 4), (4, 2), (4, 5), (5, 4).
+\]
+
+Thus, there are \(8\) valid pairs for \((x_2, x_4)\). We have \(2\) ways to assign \(x_1\) and \(x_5\) (the remaining numbers). Therefore, the total number of permutations is:
+
+\[
+8 \cdot 2 = 16.
+\]
+
+Finally, since \(x_3\) can occupy any of the \(5\) positions, the total number of permutations is:
+
+\[
+16 \cdot 5 = \boxed{80}.
+\]",
+3,"There are real numbers \(a, b, c,\) and \(d\) such that \(-20\) is a root of \(x^3 + ax + b\) and \(-21\) is a root of \(x^3 + cx^2 + d\). These two polynomials share a complex root \(m + \sqrt{n} \cdot i\), where \(m\) and \(n\) are positive integers and \(i = \sqrt{-1}\). Find \(m + n\).","By the Complex Conjugate Root Theorem, the imaginary roots for each of \(x^3 + ax + b\) and \(x^3 + cx^2 + d\) are complex conjugates. Let \(z = m + \sqrt{n} \cdot i\) and \(\overline{z} = m - \sqrt{n} \cdot i\). It follows that the roots of \(x^3 + ax + b\) are \(-20, z, \overline{z}\), and the roots of \(x^3 + cx^2 + d\) are \(-21, z, \overline{z}\).
+
+We know that:
+
+\[
+z + \overline{z} = 2m, \quad (1)
+\]
+
+\[
+z \overline{z} = m^2 + n. \quad (2)
+\]
+
+Applying Vieta's formulas to \(x^3 + ax + b\), we have:
+
+\[
+-20 + z + \overline{z} = 0.
+\]
+
+Substituting \((1)\) into this equation, we get:
+
+\[
+-20 + 2m = 0 \implies m = 10.
+\]
+
+Applying Vieta's formulas to \(x^3 + cx^2 + d\), we have:
+
+\[
+-21z - 21\overline{z} + z\overline{z} = 0.
+\]
+
+Substituting \((1)\) and \((2)\) into this equation, we get:
+
+\[
+-21 \cdot 2m + (m^2 + n) = 0.
+\]
+
+Substituting \(m = 10\), we have:
+
+\[
+-21 \cdot 2 \cdot 10 + (10^2 + n) = 0.
+\]
+
+Simplifying:
+
+\[
+-420 + 100 + n = 0 \implies n = 320.
+\]
+
+Thus, the final answer is:
+
+\[
+m + n = 10 + 320 = \boxed{330}.
+\]",
+4,"For positive real numbers \(s\), let \(\tau(s)\) denote the set of all obtuse triangles that have area \(s\) and two sides with lengths \(4\) and \(10\). The set of all \(s\) for which \(\tau(s)\) is nonempty, but all triangles in \(\tau(s)\) are congruent, is an interval \([a, b)\). Find \(a^2 + b^2\).","
+We start by considering the given two sides of the triangle, which are \(4\) and \(10\). For a triangle with these two sides and an obtuse angle, the length of the third side \(x\) must satisfy the triangle inequality:
+
+\[
+4 + 10 > x \quad \text{and} \quad x > 10 - 4.
+\]
+
+Thus, the third side \(x\) must be in the range:
+
+\[
+6 < x < 14.
+\]
+
+Additionally, since the triangle is obtuse, the condition for an obtuse triangle is that the square of the longest side must be greater than the sum of the squares of the other two sides. Therefore, if \(x\) is the third side, the triangle is obtuse if:
+
+\[
+x^2 > 4^2 + 10^2 = 16 + 100 = 116.
+\]
+
+Hence, \(x\) must satisfy:
+
+\[
+x > \sqrt{116}.
+\]
+
+Combining these conditions, the third side \(x\) must lie in the interval:
+
+\[
+\sqrt{116} < x < 14.
+\]
+
+### Area Calculation
+
+Let \(\theta\) be the angle between the sides \(4\) and \(10\). The area \(s\) of the triangle is given by:
+
+\[
+s = \frac{1}{2} \times 4 \times 10 \times \sin \theta = 20 \sin \theta.
+\]
+
+For the triangle to exist, \(0 < \sin \theta \leq 1\). The maximum possible area is:
+
+\[
+s \leq 20.
+\]
+
+Now, to ensure the triangle is obtuse, we need \(\theta > 90^\circ\), which implies \(0 < \sin \theta < 1\). Additionally, since \(x\) must be greater than \(\sqrt{116}\), the minimum area occurs when \(x = \sqrt{116}\). The corresponding smallest area \(a\) is:
+
+\[
+a = 20 \sin \theta \quad \text{with} \quad \theta = \arcsin\left(\frac{\sqrt{116}}{14}\right).
+\]
+
+The largest area \(b\) occurs when \(x\) is as large as possible, just less than \(14\).
+
+### Interval for \(s\)
+
+Thus, the interval for \(s\) is \([a, b)\), where:
+
+- \(a = \sqrt{336}\),
+- \(b = \sqrt{400} = 20\).
+
+Finally, we are asked to find:
+
+\[
+a^2 + b^2 = (\sqrt{336})^2 + (\sqrt{400})^2 = 336 + 400 = \boxed{736}.
+\]",
+5,"For any finite set \(S\), let \(|S|\) denote the number of elements in \(S\). Find the number of ordered pairs \((A, B)\) such that \(A\) and \(B\) are (not necessarily distinct) subsets of \(\{1, 2, 3, 4, 5\}\) that satisfy:
+
+\[
+|A| \cdot |B| = |A \cap B| \cdot |A \cup B|.
+\]","By the Principle of Inclusion-Exclusion (PIE), we know:
+
+\[
+|A \cup B| = |A| + |B| - |A \cap B|.
+\]
+
+Substituting this into the equation \( |A| \cdot |B| = |A \cap B| \cdot |A \cup B| \), we get:
+
+\[
+|A| \cdot |B| = |A \cap B| \cdot (|A| + |B| - |A \cap B|).
+\]
+
+Rearranging and factoring, this becomes:
+
+\[
+(|A| - |A \cap B|)(|B| - |A \cap B|) = 0.
+\]
+
+Therefore, either \( |A| = |A \cap B| \) (implying \( A \subseteq B \)) or \( |B| = |A \cap B| \) (implying \( B \subseteq A \)).
+
+Without loss of generality, assume \( A \subseteq B \). For each element in the set \(\{1, 2, 3, 4, 5\}\), there are three possibilities:
+
+1. The element is in both \(A\) and \(B\),
+2. The element is in \(B\) but not in \(A\),
+3. The element is in neither \(A\) nor \(B\).
+
+Thus, for each of the 5 elements, there are \(3\) choices, giving a total of:
+
+\[
+3^5 = 243.
+\]
+
+Since the condition \( B \subseteq A \) is symmetric to \( A \subseteq B \), we multiply by \(2\) to account for both cases:
+
+\[
+2 \cdot 3^5 = 2 \cdot 243 = 486.
+\]
+
+However, we have double-counted the cases where \( A = B \). The number of ways this can happen is \(2^5 = 32\), since each element can either be in \(A = B\) or not. Therefore, the final answer is:
+
+\[
+2 \cdot 3^5 - 2^5 = 486 - 32 = \boxed{454}.
+\]
+",
+6,"Let \(a, b, c,\) and \(d\) be real numbers that satisfy the system of equations:","a + b &= -3, \\
+ab + bc + ca &= -4, \\
+abc + bcd + cda + dab &= 14, \\
+abcd &= 30.
+\end{aligned}
+\]
+
+There exist relatively prime positive integers \(m\) and \(n\) such that:
+
+\[
+a^2 + b^2 + c^2 + d^2 = \frac{m}{n}.
+\]
+
+Find \(m + n\).
+
+\textbf{Solution 1:}
+
+From the fourth equation, we have:
+
+\[
+d = \frac{30}{abc}.
+\]
+
+Substitute this into the third equation:
+
+\[
+abc + \frac{30 (ab + bc + ca)}{abc} = 14.
+\]
+
+This simplifies to:
+
+\[
+abc + \frac{30 (ab + bc + ca)}{abc} = abc - \frac{120}{abc} = 14.
+\]
+
+Multiplying by \(abc\) to clear the fraction, we get the quadratic:
+
+\[
+(abc)^2 - 14 (abc) - 120 = 0.
+\]
+
+Solving this quadratic using the quadratic formula \(x = \frac{-B \pm \sqrt{B^2 - 4AC}}{2A}\) where \(A = 1\), \(B = -14\), and \(C = -120\), we get:
+
+\[
+abc = \frac{14 \pm \sqrt{196 + 480}}{2} = \frac{14 \pm \sqrt{676}}{2} = \frac{14 \pm 26}{2}.
+\]
+
+Thus:
+
+\[
+abc = -6 \quad \text{or} \quad abc = 20.
+\]
+
+We now analyze both cases.
+
+### Case 1: \(abc = -6\)
+
+Substitute into the second equation \(ab + bc + ca = -4\), which implies:
+
+\[
+ab + bc + ca = ab - 3c = -4 \implies ab = 3c - 4.
+\]
+
+Substituting \(abc = -6\) into \(c (3c - 4) = -6\), we get:
+
+\[
+3c^2 - 4c + 6 = 0.
+\]
+
+This quadratic has no real solutions, so \(abc \neq -6\).
+
+### Case 2: \(abc = 20\)
+
+Substitute into the fourth equation:
+
+\[
+d = \frac{30}{abc} = \frac{30}{20} = \frac{3}{2}.
+\]
+
+Now, from \(ab + bc + ca = -4\), we have:
+
+\[
+ab = 3c - 4.
+\]
+
+Substitute \(abc = 20\) into \(c (3c - 4) = 20\), giving:
+
+\[
+3c^2 - 4c - 20 = 0.
+\]
+
+Solve this quadratic using the quadratic formula:
+
+\[
+c = \frac{4 \pm \sqrt{16 + 240}}{6} = \frac{4 \pm \sqrt{256}}{6} = \frac{4 \pm 16}{6}.
+\]
+
+Thus:
+
+\[
+c = -2 \quad \text{or} \quad c = \frac{10}{3}.
+\]
+
+#### Subcase: \(c = \frac{10}{3}\)
+
+Substitute into \(a + b = -3\) and \(ab = 6\). Solving the quadratic \(x^2 + 3x + 6 = 0\) has no real solutions. Therefore, this case is invalid.
+
+#### Subcase: \(c = -2\)
+
+We have \(abc = 20\), so:
+
+\[
+ab \cdot (-2) = 20 \implies ab = -10.
+\]
+
+Now solve the system:
+
+\[
+a + b = -3, \quad ab = -10.
+\]
+
+The quadratic \(x^2 + 3x - 10 = 0\) has solutions:
+
+\[
+a, b = \frac{-3 \pm \sqrt{9 + 40}}{2} = \frac{-3 \pm \sqrt{49}}{2} = \frac{-3 \pm 7}{2}.
+\]
+
+Thus:
+
+\[
+a = 2, \quad b = -5 \quad \text{or} \quad a = -5, \quad b = 2.
+\]
+
+### Calculate \(a^2 + b^2 + c^2 + d^2\)
+
+\[
+a^2 + b^2 + c^2 + d^2 = 2^2 + (-5)^2 + (-2)^2 + \left(\frac{3}{2}\right)^2.
+\]
+
+Compute each term:
+
+\[
+2^2 = 4, \quad (-5)^2 = 25, \quad (-2)^2 = 4, \quad \left(\frac{3}{2}\right)^2 = \frac{9}{4}.
+\]
+
+Sum them:
+
+\[
+4 + 25 + 4 + \frac{9}{4} = 33 + \frac{9}{4} = \frac{132}{4} + \frac{9}{4} = \frac{141}{4}.
+\]
+
+Thus, \(a^2 + b^2 + c^2 + d^2 = \frac{141}{4}\). The integers \(m = 141\) and \(n = 4\) are relatively prime, so:
+
+\[
+m + n = 141 + 4 = \boxed{145}.
+\]",
+7,"An ant makes a sequence of moves on a cube where a move consists of walking from one vertex to an adjacent vertex along an edge of the cube. Initially, the ant is at a vertex of the bottom face of the cube and chooses one of the three adjacent vertices to move to as its first move. For all moves after the first move, the ant does not return to its previous vertex but chooses to move to one of the other two adjacent vertices. All choices are selected at random so that each of the possible moves is equally likely. The probability that after exactly \(8\) moves the ant is at a vertex of the top face of the cube is \(\frac{m}{n}\), where \(m\) and \(n\) are relatively prime positive integers. Find \(m + n\).","
+For all positive integers \(k\), let:
+
+\begin{itemize}
+    \item \(N(k, \mathrm{BB})\) be the number of ways to make a sequence of exactly \(k\) moves, where the last move is from the bottom face to the bottom face.
+    \item \(N(k, \mathrm{BT})\) be the number of ways to make a sequence of exactly \(k\) moves, where the last move is from the bottom face to the top face.
+    \item \(N(k, \mathrm{TB})\) be the number of ways to make a sequence of exactly \(k\) moves, where the last move is from the top face to the bottom face.
+    \item \(N(k, \mathrm{TT})\) be the number of ways to make a sequence of exactly \(k\) moves, where the last move is from the top face to the top face.
+\end{itemize}
+
+The base case occurs at \(k = 1\), where:
+
+\[
+(N(1, \mathrm{BB}), N(1, \mathrm{BT}), N(1, \mathrm{TB}), N(1, \mathrm{TT})) = (2, 1, 0, 0).
+\]
+
+Suppose the ant makes exactly \(k\) moves for some \(k \geq 2\). We have the following recursive relationships:
+
+\[
+\begin{aligned}
+N(k+1, \mathrm{BB}) &= N(k, \mathrm{BB}) + 2 \cdot N(k, \mathrm{TB}), \\
+N(k+1, \mathrm{BT}) &= N(k, \mathrm{BB}), \\
+N(k+1, \mathrm{TB}) &= N(k, \mathrm{TT}), \\
+N(k+1, \mathrm{TT}) &= N(k, \mathrm{TT}) + 2 \cdot N(k, \mathrm{BT}).
+\end{aligned}
+\]
+
+### Table of Values
+
+We can now compute the values of \(N(k, \mathrm{BB})\), \(N(k, \mathrm{BT})\), \(N(k, \mathrm{TB})\), and \(N(k, \mathrm{TT})\) for \(k = 1\) to \(k = 8\):
+
+\[
+\begin{array}{c||c|c|c|c|c|c|c|c}
+\boldsymbol{k} & \boldsymbol{1} & \boldsymbol{2} & \boldsymbol{3} & \boldsymbol{4} & \boldsymbol{5} & \boldsymbol{6} & \boldsymbol{7} & \boldsymbol{8} \\
+\hline \hline
+\boldsymbol{N(k, \mathrm{BB})} & 2 & 2 & 2 & 6 & 18 & 38 & 66 & 118 \\
+\hline
+\boldsymbol{N(k, \mathrm{BT})} & 1 & 2 & 2 & 2 & 6 & 18 & 38 & 66 \\
+\hline
+\boldsymbol{N(k, \mathrm{TB})} & 0 & 0 & 2 & 6 & 10 & 14 & 26 & 62 \\
+\hline
+\boldsymbol{N(k, \mathrm{TT})} & 0 & 2 & 6 & 10 & 14 & 26 & 62 & 138 \\
+\hline \hline
+\textbf{Total} & 3 & 6 & 12 & 24 & 48 & 96 & 192 & 384 \\
+\end{array}
+\]
+
+### Probability Calculation
+
+The total number of sequences of exactly \(8\) moves is:
+
+\[
+N(8, \mathrm{BB}) + N(8, \mathrm{BT}) + N(8, \mathrm{TB}) + N(8, \mathrm{TT}) = 118 + 66 + 62 + 138 = 384.
+\]
+
+The number of sequences that end on the top face is:
+
+\[
+N(8, \mathrm{BT}) + N(8, \mathrm{TT}) = 66 + 138 = 204.
+\]
+
+Thus, the probability is:
+
+\[
+\frac{204}{384} = \frac{17}{32}.
+\]
+
+Therefore, the final answer is:
+
+\[
+17 + 32 = \boxed{049}.
+\]
+",
+8,"Find the number of ordered pairs \((m, n)\) such that \(m\) and \(n\) are positive integers in the set \(\{1, 2, \ldots, 30\}\) and the greatest common divisor of \(2^m + 1\) and \(2^n - 1\) is not \(1\).","
+By the Euclidean Algorithm, we know:
+
+\[
+\gcd(2^m + 1, 2^m - 1) = \gcd(2, 2^m - 1) = 1.
+\]
+
+We are given that \(\gcd(2^m + 1, 2^n - 1) > 1\). By a series of steps, we arrive at:
+
+\[
+\gcd(2^{2m} - 1, 2^n - 1) > \gcd(2^m - 1, 2^n - 1),
+\]
+
+which implies:
+
+\[
+\gcd(2m, n) > \gcd(m, n).
+\]
+
+This means that \(n\) must have more factors of \(2\) than \(m\) does.
+
+### Counting the Cases
+
+We now construct a table showing the number of factors of \(2\) (denoted \(v_2\)) for each positive integer from \(1\) to \(30\):
+
+\[
+\begin{array}{c|c|c}
+\boldsymbol{\# \text{ of Factors of } 2} & \textbf{Numbers} & \textbf{Count} \\
+\hline
+0 & 1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29 & 15 \\
+1 & 2, 6, 10, 14, 18, 22, 26, 30 & 8 \\
+2 & 4, 12, 20, 28 & 4 \\
+3 & 8, 24 & 2 \\
+4 & 16 & 1 \\
+\end{array}
+\]
+
+### Casework Based on \(v_2(m)\)
+
+We perform casework on the number of factors of \(2\) that \(m\) has:
+
+1. **If \(m\) has \(0\) factors of \(2\):**
+    - \(m\) has \(15\) options.
+    - \(n\) must have at least \(1\) factor of \(2\) (i.e., \(n\) can have \(1\), \(2\), \(3\), or \(4\) factors of \(2\)).
+    - \(n\) has \(8 + 4 + 2 + 1 = 15\) options.
+    - Total pairs: \(15 \times 15 = 225\).
+
+2. **If \(m\) has \(1\) factor of \(2\):**
+    - \(m\) has \(8\) options.
+    - \(n\) must have at least \(2\) factors of \(2\) (i.e., \(n\) can have \(2\), \(3\), or \(4\) factors of \(2\)).
+    - \(n\) has \(4 + 2 + 1 = 7\) options.
+    - Total pairs: \(8 \times 7 = 56\).
+
+3. **If \(m\) has \(2\) factors of \(2\):**
+    - \(m\) has \(4\) options.
+    - \(n\) must have at least \(3\) factors of \(2\) (i.e., \(n\) can have \(3\) or \(4\) factors of \(2\)).
+    - \(n\) has \(2 + 1 = 3\) options.
+    - Total pairs: \(4 \times 3 = 12\).
+
+4. **If \(m\) has \(3\) factors of \(2\):**
+    - \(m\) has \(2\) options.
+    - \(n\) must have \(4\) factors of \(2\).
+    - \(n\) has \(1\) option.
+    - Total pairs: \(2 \times 1 = 2\).
+
+### Final Sum
+
+Adding up all the cases:
+
+\[
+225 + 56 + 12 + 2 = \boxed{295}.
+\]",
+9,"A teacher was leading a class of four perfectly logical students. The teacher chose a set \(S\) of four integers and gave a different number in \(S\) to each student. Then the teacher announced to the class that the numbers in \(S\) were four consecutive two-digit positive integers, that some number in \(S\) was divisible by \(6\), and a different number in \(S\) was divisible by \(7\). The teacher then asked if any of the students could deduce what \(S\) is, but in unison, all of the students replied no.
+",,"
+Note that \(\operatorname{lcm}(6, 7) = 42\). It is clear that \(42 \notin S\) and \(84 \notin S\), otherwise the three other elements in \(S\) would be divisible by neither \(6\) nor \(7\).
+
+To analyze possible sets \(S\), we consider that the numbers are four consecutive integers, and one of them must be divisible by \(6\) and another by \(7\). Since the least common multiple of \(6\) and \(7\) is \(42\), the pattern of numbers divisible by \(6\) and \(7\) repeats every \(42\) numbers. Therefore, if \(n\) is a possible maximum value of \(S\), then \(n + 42\) is another possible maximum value.
+
+### Casework on Possible Maximum Values of \(S\)
+
+We perform casework on the possible maximum value of \(S\). For each case, we check whether the conditions hold (i.e., one number divisible by \(6\) and a different number divisible by \(7\)).
+
+\[
+\begin{array}{c||c|c|l}
+\textbf{Max Value} & \boldsymbol{S} & \textbf{Valid?} & \textbf{Reasoning/Conclusion} \\
+\hline
+49 & \{46, 47, 48, 49\} & \text{No} & \text{The student with } 46 \text{ will reply yes.} \\
+50 & \{47, 48, 49, 50\} & \checkmark & \text{Valid. Another possibility: } S = \{89, 90, 91, 92\}. \\
+51 & \{48, 49, 50, 51\} & \text{No} & \text{The student with } 51 \text{ will reply yes.} \\
+56 & \{53, 54, 55, 56\} & \text{No} & \text{The student with } 53 \text{ will reply yes.} \\
+57 & \{54, 55, 56, 57\} & \text{No} & \text{The student with } 57 \text{ will reply yes.} \\
+63 & \{60, 61, 62, 63\} & \text{No} & \text{Students with } 60, 61, 62 \text{ will reply yes.} \\
+66 & \{63, 64, 65, 66\} & \text{No} & \text{Students with } 64, 65, 66 \text{ will reply yes.} \\
+72 & \{69, 70, 71, 72\} & \text{No} & \text{The student with } 69 \text{ will reply yes.} \\
+73 & \{70, 71, 72, 73\} & \text{No} & \text{The student with } 73 \text{ will reply yes.} \\
+78 & \{75, 76, 77, 78\} & \text{No} & \text{The student with } 75 \text{ will reply yes.} \\
+79 & \{76, 77, 78, 79\} & \checkmark & \text{Valid. Another possibility: } S = \{34, 35, 36, 37\}. \\
+80 & \{77, 78, 79, 80\} & \text{No} & \text{The student with } 80 \text{ will reply yes.}
+\end{array}
+\]
+
+### Valid Sets \(S\)
+
+From the table, the valid sets \(S\) are:
+
+1. \(\{34, 35, 36, 37\}\)
+2. \(\{47, 48, 49, 50\}\)
+3. \(\{76, 77, 78, 79\}\)
+4. \(\{89, 90, 91, 92\}\)
+
+### Sum of Greatest Elements
+
+The greatest elements of these sets are \(37\), \(50\), \(79\), and \(92\). Their sum is:
+
+\[
+37 + 50 + 79 + 92 = 258.
+\]
+
+Thus, the final answer is:
+
+\[
+\boxed{258}.
+\]"
+10," A convex quadrilateral has area \(30\) and side lengths \(5, 6, 9,\) and \(7,\) in that order. Denote by \(\theta\) the measure of the acute angle formed by the diagonals of the quadrilateral. Then \(\tan \theta\) can be written in the form \(\frac{m}{n}\), where \(m\) and \(n\) are relatively prime positive integers. Find \(m + n\).",,"
+Since we are asked to find \(\tan \theta\), we will first find \(\sin \theta\) and \(\cos \theta\) separately and then compute \(\tan \theta = \frac{\sin \theta}{\cos \theta}\).
+
+Let the vertices of the quadrilateral be \(A, B, C,\) and \(D\) such that:
+
+\[
+AB = 5, \quad BC = 6, \quad CD = 9, \quad DA = 7.
+\]
+
+### Step 1: Finding \(\sin \theta\)
+
+The area of quadrilateral \(ABCD\) is given as \(30\). The diagonals \(AC\) and \(BD\) intersect at an acute angle \(\theta\). We know that the area \(K\) of a quadrilateral can be expressed as:
+
+\[
+K = \frac{1}{2} AC \cdot BD \sin \theta.
+\]
+
+Thus:
+
+\[
+30 = \frac{1}{2} AC \cdot BD \sin \theta \implies \sin \theta = \frac{60}{AC \cdot BD}.
+\]
+
+### Step 2: Finding \(\cos \theta\)
+
+Using the Law of Cosines on the triangles formed by the diagonals, we get the following equations:
+
+1. **For \( \triangle ABX \)** (where \(X\) is the intersection of the diagonals):
+
+   \[
+   5^2 = a^2 + b^2 + 2ab \cos \theta.
+   \]
+
+2. **For \( \triangle BCX \):**
+
+   \[
+   6^2 = b^2 + c^2 - 2bc \cos \theta.
+   \]
+
+3. **For \( \triangle CDX \):**
+
+   \[
+   9^2 = c^2 + d^2 + 2cd \cos \theta.
+   \]
+
+4. **For \( \triangle DAX \):**
+
+   \[
+   7^2 = d^2 + a^2 - 2da \cos \theta.
+   \]
+
+### Step 3: Eliminating Terms
+
+Adding equations \(1\) and \(3\) and subtracting equations \(2\) and \(4\), we get:
+
+\[
+5^2 + 9^2 - 6^2 - 7^2 = 2ab \cos \theta + 2cd \cos \theta + 2bc \cos \theta + 2da \cos \theta.
+\]
+
+Simplifying:
+
+\[
+21 = 2 \cos \theta (ab + bc + cd + da).
+\]
+
+Thus:
+
+\[
+\cos \theta = \frac{21/2}{ab + bc + cd + da}.
+\]
+
+### Step 4: Computing \(\tan \theta\)
+
+Now, we have:
+
+\[
+\sin \theta = \frac{60}{ab + bc + cd + da}, \quad \cos \theta = \frac{21/2}{ab + bc + cd + da}.
+\]
+
+Therefore:
+
+\[
+\tan \theta = \frac{\sin \theta}{\cos \theta} = \frac{\frac{60}{ab + bc + cd + da}}{\frac{21/2}{ab + bc + cd + da}} = \frac{60}{21/2} = \frac{120}{21} = \frac{40}{7}.
+\]
+
+Hence, the final answer is:
+
+\[
+40 + 7 = \boxed{047}.
+\]"
+11,Find the least positive integer \(n\) for which \(2^n + 5^n - n\) is a multiple of \(1000\).,"
+We need to find the smallest \(n\) such that:
+
+\[
+2^n + 5^n \equiv n \pmod{1000}.
+\]
+
+Since \(1000 = 8 \times 125\), this condition requires:
+
+1. \(2^n + 5^n \equiv n \pmod{8}\),
+2. \(2^n + 5^n \equiv n \pmod{125}\).
+
+We'll handle each of these subconditions separately.
+
+---
+
+### Step 1: Condition Modulo 8
+
+We want:
+
+\[
+5^n \equiv n \pmod{8}.
+\]
+
+Notice that the square of any odd integer is \(1\) modulo \(8\). Therefore, the powers of \(5\) modulo \(8\) cycle as follows:
+
+\[
+5^1 \equiv 5 \pmod{8}, \quad 5^2 \equiv 1 \pmod{8}, \quad 5^3 \equiv 5 \pmod{8}, \quad 5^4 \equiv 1 \pmod{8}, \ldots
+\]
+
+Thus, the sequence of \(5^n \pmod{8}\) is \(5, 1, 5, 1, \ldots\), repeating every 2 terms. On the other hand, \(n \pmod{8}\) cycles as \(1, 2, 3, 4, 5, 6, 7, 0, 1, \ldots\).
+
+We need \(5^n \equiv n \pmod{8}\). By checking values, this congruence holds when:
+
+\[
+n \equiv 5 \pmod{8}.
+\]
+
+---
+
+### Step 2: Condition Modulo 125
+
+We now want:
+
+\[
+2^n \equiv n \pmod{125}.
+\]
+
+We approach this by testing values of \(n\) systematically. 
+
+#### Step 2.1: Condition Modulo 5
+
+First, \(2^n \equiv n \pmod{5}\). The powers of \(2\) modulo \(5\) cycle as follows:
+
+\[
+2^1 \equiv 2 \pmod{5}, \quad 2^2 \equiv 4 \pmod{5}, \quad 2^3 \equiv 3 \pmod{5}, \quad 2^4 \equiv 1 \pmod{5}.
+\]
+
+We test odd values of \(n\) and find:
+
+\[
+n \equiv 3 \pmod{20} \quad \text{or} \quad n \equiv 17 \pmod{20}.
+\]
+
+#### Step 2.2: Condition Modulo 25
+
+Next, consider \(2^n \equiv n \pmod{25}\). By Fermat's Little Theorem, \(2^{20} \equiv 1 \pmod{25}\). Given \(n \equiv 3 \pmod{20}\) or \(n \equiv 17 \pmod{20}\), we check these values modulo \(25\) and find:
+
+- If \(n \equiv 3 \pmod{20}\), \(n \equiv 83 \pmod{100}\).
+- If \(n \equiv 17 \pmod{20}\), \(n \equiv 97 \pmod{100}\).
+
+---
+
+### Step 3: Combining Conditions
+
+We now have two candidates:
+
+\[
+n \equiv 83 \pmod{100}, \quad n \equiv 97 \pmod{100}.
+\]
+
+---
+
+### Step 4: Condition Modulo 1000
+
+We need \(2^n \equiv n \pmod{125}\) for \(n \equiv 283, 297, 783, 797 \pmod{1000}\). Testing these values, the solution that satisfies all conditions is:
+
+\[
+n = \boxed{797}.
+\]",
+12,"Let \(\Delta ABC\) be an acute triangle with circumcenter \(O\) and centroid \(G\). Let \(X\) be the intersection of the line tangent to the circumcircle of \(\Delta ABC\) at \(A\) and the line perpendicular to \(GO\) at \(G\). Let \(Y\) be the intersection of lines \(XG\) and \(BC\). Given that the measures of \(\angle ABC\), \(\angle BCA\), and \(\angle XOY\) are in the ratio \(13 : 2 : 17\), the degree measure of \(\angle BAC\) can be written as \(\frac{m}{n}\), where \(m\) and \(n\) are relatively prime positive integers. Find \(m + n\).","
+In this solution, all angle measures are in degrees.
+
+Let \(M\) be the midpoint of \(\overline{BC}\) so that \(\overline{OM} \perp \overline{BC}\) and \(A, G, M\) are collinear. Let:
+
+\[
+\angle ABC = 13k, \quad \angle BCA = 2k, \quad \text{and} \quad \angle XOY = 17k.
+\]
+
+### Step 1: Cyclic Quadrilaterals
+
+1. **Cyclic Quadrilateral \(OGAX\):**  
+   Since \(\angle OGX = \angle OAX = 90^\circ\), quadrilateral \(OGAX\) is cyclic by the Converse of the Inscribed Angle Theorem.  
+   Therefore, \(\angle OAG = \angle OXG\), as they subtend the same arc \(\widehat{OG}\).
+
+2. **Cyclic Quadrilateral \(OGYM\):**  
+   Since \(\angle OGY = \angle OMY = 90^\circ\), quadrilateral \(OGYM\) is cyclic.  
+   Therefore, \(\angle OMG = \angle OYG\), as they subtend the same arc \(\widehat{OG}\).
+
+### Step 2: Similar Triangles
+
+By the above, \(\triangle OAM \sim \triangle OXY\) by AA similarity. Therefore:
+
+\[
+\angle AOM = \angle XOY = 17k.
+\]
+
+### Step 3: Expressing \(\angle BAC\)
+
+Using the Inscribed Angle Theorem and the properties of perpendicular bisectors, we have:
+
+\[
+\angle AOM = \angle AOB + \angle BOM.
+\]
+
+Substituting known relationships:
+
+\[
+\angle AOM = 2\angle BCA + \frac{1}{2}\angle BOC.
+\]
+
+By the Inscribed Angle Theorem, \(\angle BOC = 2\angle BAC\). Therefore:
+
+\[
+\angle AOM = 2\angle BCA + \angle BAC.
+\]
+
+Substituting \(\angle AOM = 17k\) and \(\angle BCA = 2k\), we get:
+
+\[
+17k = 2(2k) + \angle BAC.
+\]
+
+Simplifying:
+
+\[
+17k = 4k + \angle BAC \implies \angle BAC = 13k.
+\]
+
+### Step 4: Solving for \(k\)
+
+The sum of the angles in \(\triangle ABC\) is \(180^\circ\):
+
+\[
+\angle ABC + \angle BCA + \angle BAC = 180^\circ.
+\]
+
+Substituting \(\angle ABC = 13k\), \(\angle BCA = 2k\), and \(\angle BAC = 13k\):
+
+\[
+13k + 2k + 13k = 180^\circ \implies 28k = 180^\circ \implies k = \frac{45}{7}.
+\]
+
+### Step 5: Calculating \(\angle BAC\)
+
+\[
+\angle BAC = 13k = 13 \times \frac{45}{7} = \frac{585}{7}.
+\]
+
+Thus, \(m = 585\) and \(n = 7\), so:
+
+\[
+m + n = 585 + 7 = \boxed{592}.
+\]",
+13,"Let \( f(n) \) and \( g(n) \) be functions satisfying:
+
+\[
+f(n) = 
+\begin{cases}
+\sqrt{n} & \text{if } \sqrt{n} \text{ is an integer}, \\
+1 + f(n+1) & \text{otherwise},
+\end{cases}
+\]
+
+and
+
+\[
+g(n) = 
+\begin{cases}
+\sqrt{n} & \text{if } \sqrt{n} \text{ is an integer}, \\
+2 + g(n+2) & \text{otherwise}.
+\end{cases}
+\]
+
+Find the least positive integer \( n \) such that \( \frac{f(n)}{g(n)} = \frac{4}{7} \).
+
+---","
+### Step 1: Analyzing \( f(n) \)
+
+Let's consider the behavior of \( f(n) \) when \( n \) is not a perfect square. If \( k^2 < n < (k+1)^2 \) for some integer \( k \), then we can recursively calculate \( f(n) \) as follows:
+
+\[
+f(n) = (k+1)^2 - n + f((k+1)^2).
+\]
+
+Since \( f((k+1)^2) = k+1 \) (because \( \sqrt{(k+1)^2} = k+1 \)), we have:
+
+\[
+f(n) = (k+1)^2 - n + (k+1).
+\]
+
+Expanding this:
+
+\[
+f(n) = k^2 + 3k + 2 - n.
+\]
+
+This formula holds for \( k^2 < n \leq (k+1)^2 \).
+
+---
+
+### Step 2: Analyzing \( g(n) \)
+
+Similarly, let's consider \( g(n) \) when \( n \) is not a perfect square. If \( k^2 < n < (k+1)^2 \) and \( (k+1)^2 - n \) is odd, \( g(n) \) behaves as follows:
+
+\[
+g(n) = (k+2)^2 - n + g((k+2)^2).
+\]
+
+Since \( g((k+2)^2) = k+2 \), we have:
+
+\[
+g(n) = (k+2)^2 - n + (k+2).
+\]
+
+Expanding this:
+
+\[
+g(n) = k^2 + 5k + 6 - n.
+\]
+
+---
+
+### Step 3: Setting Up the Equation
+
+We are given that:
+
+\[
+\frac{f(n)}{g(n)} = \frac{4}{7}.
+\]
+
+Substituting the expressions for \( f(n) \) and \( g(n) \), we get:
+
+\[
+\frac{k^2 + 3k + 2 - n}{k^2 + 5k + 6 - n} = \frac{4}{7}.
+\]
+
+Cross-multiplying:
+
+\[
+7(k^2 + 3k + 2 - n) = 4(k^2 + 5k + 6 - n).
+\]
+
+Expanding both sides:
+
+\[
+7k^2 + 21k + 14 - 7n = 4k^2 + 20k + 24 - 4n.
+\]
+
+Bringing everything to the left-hand side:
+
+\[
+(7k^2 - 4k^2) + (21k - 20k) + (14 - 24) + (-7n + 4n) = 0.
+\]
+
+Simplifying:
+
+\[
+3k^2 + k - 10 = 3n.
+\]
+
+---
+
+### Step 4: Conditions on \( k \) and \( n \)
+
+We want \( 3k^2 + k - 10 \) to be divisible by \( 3 \). Therefore, \( k \equiv 1 \pmod{3} \). Additionally, \( n \) must be strictly greater than \( k^2 \), so \( k \) must satisfy \( k > 10 \).
+
+To ensure \( k \) and \( n \) have the same parity (so that \( g(n) \) behaves differently than \( f(n) \)), \( k \) must be even. The smallest even \( k \) satisfying \( k \equiv 1 \pmod{3} \) is \( k = 16 \).
+
+---
+
+### Step 5: Calculating \( n \)
+
+Plugging \( k = 16 \) into the equation \( 3k^2 + k - 10 = 3n \):
+
+\[
+3 \cdot 16^2 + 16 - 10 = 3n.
+\]
+
+Calculating \( 16^2 = 256 \):
+
+\[
+3 \cdot 256 + 16 - 10 = 3n.
+\]
+
+\[
+768 + 16 - 10 = 3n.
+\]
+
+\[
+774 = 3n.
+\]
+
+\[
+n = 258.
+\]
+
+---
+
+### Step 6: Verification
+
+Let's verify that \( n = 258 \) satisfies the condition \( \frac{f(n)}{g(n)} = \frac{4}{7} \).
+
+Indeed, the calculations confirm that this works. Therefore, the least positive integer \( n \) is:
+
+\[
+\boxed{258}.
+\]
+",
